@@ -1,7 +1,19 @@
 #include "student.h"
 
 int squareOfSmallest(int array[], int length) {
-	return -1;
+  int square = 0;
+  int min = 0;
+  //first find the min of the array 
+  for(int x = 1; i <=length; x++)
+  {
+    if(min>array[x])
+    {
+      min = array[x];
+    }
+  }
+  //square the min
+  square = min * min;
+  return square;
 }
 
 int findMin(int *nums, int numsSize){

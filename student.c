@@ -2,9 +2,12 @@
 
 int squareOfSmallest(int array[], int length) {
   int square = 0;
-  int min = 0;
+  int array[] = {4,2,5};
+  //automatically set the min to first element
+  int min = array[0];
+  int length = 3;
   //first find the min of the array 
-  for(int x = 1; i <=length; x++)
+  for(int x = 0; x < length; x++)
   {
     if(min>array[x])
     {

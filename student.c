@@ -18,7 +18,18 @@ int squareOfSmallest(int array[], int length) {
 }
 
 int findMin(int *nums, int numsSize){
-	return -1;
+  //automatically set the min to first element
+  int min = nums[0];
+  //Find the min of the nums array 
+  for(int x = 0; x < numsSize; x++)
+  {
+    if(min>nums[x])
+    {
+      min = nums[x];
+    }
+  }
+  //return the min
+  return min;
 }
 
 bool isPalindrome(char str[]){

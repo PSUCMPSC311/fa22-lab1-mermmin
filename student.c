@@ -33,18 +33,23 @@ int findMin(int *nums, int numsSize){
 }
 
 bool isPalindrome(char str[]){
+    //take the original length of the string
     int length = strlen(str);
+    //find num of last letter
     int back = length-1;
     int front = 0;
 
+    //while the loop is still looking at right and left letters
     while (back > front)
     {
+        //if the right letter is not equal to the left letter
         if(str[back--] != str[front++])
         {
+            //it is not a palindrome and return false
             return false;
         }
     }
-    
+    //return true if not already returning false
     return true;
 }
 

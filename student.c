@@ -33,7 +33,19 @@ int findMin(int *nums, int numsSize){
 }
 
 bool isPalindrome(char str[]){
-	return false; 
+    int length = strlen(str);
+    int back = length-1;
+    int front = 0;
+
+    while (back > front)
+    {
+        if(str[back--] != str[front++])
+        {
+            return false;
+        }
+    }
+    
+    return true;
 }
 
 int freqOfChar(char str[], char key){

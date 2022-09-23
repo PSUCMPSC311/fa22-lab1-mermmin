@@ -73,6 +73,38 @@ int freqOfChar(char str[], char key){
 }
 
 void sort(int array[],int length){
+	
+    //make a swap function
+  void swap(int* init,int* fin)
+  {
+      int temp = *init;
+      *init = *fin;
+      *fin = temp;
+  }
+
+    //going to use the selection sort ideology
+    //start declaring variables
+    int min,x,y;
+    //forloop to loop through array starting with first element
+    for(int x = 0; x < length - 1; x++)
+    {
+        //find minimum element first
+        //loop for inner run
+        for(int y = x + 1; y < length; y ++)
+        {
+            //set min to first index of loop
+            int min = x;
+
+            //if the min is greater than the y element
+            if(array[min] > array[y])
+            {
+                //flip the min index with y index
+                min = y;
+            }
+            //swap address of min element with address at x
+            swap(&array[min],&array[x]);
+        }
+    }
 }
 
 int* twoSum(int* nums, int numsSize, int target){

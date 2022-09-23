@@ -54,7 +54,22 @@ bool isPalindrome(char str[]){
 }
 
 int freqOfChar(char str[], char key){
-	return -1;
+    //make a counter variable
+    int counter = 0; 
+    //make a length finder
+    int length = strlen(str);
+    //forloop to run through string
+    for(int x = 0; x < length ; x++)
+    {
+        //if the character in string is equal to the key
+        if(str[x] == key)
+        {
+            //increment the counter
+            counter++;
+        }
+    }
+    //return number of instances
+    return counter;
 }
 
 void sort(int array[],int length){

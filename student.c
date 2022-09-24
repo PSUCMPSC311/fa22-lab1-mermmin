@@ -144,7 +144,15 @@ int twoSum(int nums, int numsSize, int target)
 
 
 int* decryptPointer(int array[], int length, int *key[]){
-	return NULL;
+    //create a pointer array holder
+    int* final = (int*)malloc(sizeof(int)*length);
+    //create forloop to add each element at x
+    for(int x = 0; x<length; x++)
+    {
+        //add the array and key at index x
+        final[x] = array[x] + *key[x];
+    }
+    return *final;
 }
 
 

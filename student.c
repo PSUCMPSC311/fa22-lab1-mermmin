@@ -107,9 +107,41 @@ void sort(int array[],int length){
     }
 }
 
-int* twoSum(int* nums, int numsSize, int target){
-	return NULL;
+//the copy array function self-made
+void copyarray(int orig[], int fin[],int size)
+{
+  for (int i = 0; i < size; i++)
+  {
+    fin[i] = orig[i];
+  }
 }
+
+int twoSum(int nums, int numsSize, int target)
+{
+    //make a new array of the two
+    int origarr[2] = {};
+    int finarr[2] = {};
+    //forloop for the first runthough number variable
+    for(int x = 0; x < numsSize; x++)
+    {
+        //second forloop for other sum variable
+        for(int y = x+1; y < numsSize; y++)
+        {
+          //sum up the two loops
+            int sum = nums[x] + nums[y];
+            //if the sum is equal to target put them each in the new array
+            if(sum == target)
+            {
+              origarr[0] = nums[x];
+              origarr[1] = nums[y];
+              //use copy array since you can't return an array
+              copyarray(origarr,finarr,2);
+            }
+        }
+        
+    }
+}
+
 
 int* decryptPointer(int array[], int length, int *key[]){
 	return NULL;

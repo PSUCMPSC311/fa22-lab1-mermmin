@@ -107,20 +107,13 @@ void sort(int array[],int length){
     }
 }
 
-//the copy array function self-made
-void copyarray(int orig[], int fin[],int size)
-{
-  for (int i = 0; i < size; i++)
-  {
-    fin[i] = orig[i];
-  }
-}
-
-int twoSum(int nums, int numsSize, int target)
+int* twoSum(int *nums, int numsSize, int target)
 {
     //make a new array of the two
-    int origarr[2] = {};
-    int finarr[2] = {};
+    int* final = (int*)malloc(length*sizeof(int));
+    int* sum;
+    int *tar = &target;
+
     //forloop for the first runthough number variable
     for(int x = 0; x < numsSize; x++)
     {
@@ -128,18 +121,17 @@ int twoSum(int nums, int numsSize, int target)
         for(int y = x+1; y < numsSize; y++)
         {
           //sum up the two loops
-            int sum = nums[x] + nums[y];
-            //if the sum is equal to target put them each in the new array
-            if(sum == target)
+            int sum = *nums[x] + *nums[y];
+            //if the sum is equal to target put them each in the new array using the poiting adddress
+            if(sum == tar)
             {
-              origarr[0] = nums[x];
-              origarr[1] = nums[y];
-              //use copy array since you can't return an array
-              copyarray(origarr,finarr,2);
+              final[0] = &nums[x];
+              final[1] = &nums[y];
             }
         }
         
     }
+    return *final;
 }
 
 
